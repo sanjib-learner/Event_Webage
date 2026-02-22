@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Reflect Before Send",
+  "version": "0.1.0",
+  "description": "Prompts reflection before sending messages with potentially strong language.",
+  "permissions": [],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
